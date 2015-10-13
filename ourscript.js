@@ -9,8 +9,8 @@ function formSubmit() {
     var place = $("#location").val();
     var year = $("#year").val();
 
-    //var Datas = Parse.Object.extend("OurData");-->this works
-    var Datas = Parse.Object.extend("test");
+    var Datas = Parse.Object.extend("OurData");
+    //var Datas = Parse.Object.extend("test");
     var datash = new Datas ();
     event.preventDefault();
     datash.save ({company:           companyName,
@@ -29,8 +29,8 @@ function formSubmit() {
               }}
     );
 }
-//var ourData = Parse.Object.extend("OurData");-->this works
-var ourData = Parse.Object.extend("test");
+var ourData = Parse.Object.extend("OurData");
+//var ourData = Parse.Object.extend("test");
 var query = new Parse.Query(ourData);
 var female = [];
 var percent = [];
@@ -108,9 +108,9 @@ function createChart(){
     svg.datum(input) 
       .call(chart);
 
-    function addZoom(options) {
+    //function addZoom(options) {
       // scaleExtent
-      var scaleExtent = 10;
+     /* var scaleExtent = 10;
       
       // parameters
       var yAxis       = options.yAxis;
@@ -181,7 +181,7 @@ function createChart(){
         xDomain: chart.xDomain,
         redraw : function() { chart.update() },
         svg    : svg
-    });
+    });*/
 
     nv.utils.windowResize(chart.update);
 
