@@ -1,5 +1,5 @@
 Parse.initialize("T6qWM2dHLB1C8z8GaEo9iUzwVoI9KmDIkmZ8jz94", "P3zlR5DQkDFEK5ynygwRgrlgncRp3rKgz0eSvpuL");
-var datash;
+var color = [];
 function formSubmit() {
     var companyName = $("#company").val();
     var teamName = $("#team").val();
@@ -23,6 +23,8 @@ function formSubmit() {
                },{
               success: function() {
                 alert("Successful.  Saved new information.");
+                return color;
+                window.location.hash="http://soitgoes33.github.io/group-proj/index.html#slide-3";
               },
               error: function(data,error){
                 alert("Error ");
@@ -36,10 +38,12 @@ var female = [];
 var percent = [];
 var company = [];
 var year = [];
+var total = [];
 query.select("num_female_eng");
 query.select("percent_female_eng");
 query.select("company");
 query.select("year");
+query.select("num_eng");
 query.limit(1000);
 query.find({
   success: function(results){
@@ -48,6 +52,7 @@ query.find({
       percent.push(results[i].get("percent_female_eng"));
       company.push(results[i].get("company"));
       year.push(results[i].get("year"));
+      total.push(results[i].get("num_eng"));
     }
     createChart();
   },
@@ -63,12 +68,14 @@ function myData() {
   data.push({values: []});
   for (j = 0; j < company.length; j++) {
     var tooltip = '<p>'+ company[j] + '<br/>Female Eng: ' + percent[j]+'%' + '<br/>No. Female Eng: ' + female[j] + '<br/>Year Founded: ' + year[j] + '</p>';
+    var color = [];
       data[0].values.push({
         x: female[j],
         y: percent[j],
         tooltip: tooltip,
-        size: percent[j],
-        shape: 'circle',            
+        size: total[j],
+        shape: 'circle', 
+        color: d3.select('datash').append('circle').attr("fill", "red"),          
       });
   } 
   
@@ -88,7 +95,7 @@ function createChart(){
               .xDomain([0,400])
               .showLegend(false)
               .interactive(true)
-              //.pointRange([0,500]);
+              .pointRange([60,400]);
 
     chart.tooltip.contentGenerator(function (obj) { 
       return obj.point.tooltip;
