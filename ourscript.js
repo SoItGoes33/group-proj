@@ -22,7 +22,7 @@ function formSubmit() {
                },{
               success: function() {
                 alert("Thank you! We have saved your information.");
-                //location.reload(true);
+                location.reload(true);
                 window.location.hash="#slide-3";
               },
               error: function(data,error){
@@ -111,7 +111,7 @@ function createChart(){
               .xDomain([0,400])
               .showLegend(false)
               .interactive(true)
-              .pointRange([60,400]);
+              .pointRange([75,400]);
 
     chart.tooltip.contentGenerator(function (obj) { 
       return obj.point.tooltip;
