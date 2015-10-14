@@ -462,3 +462,10 @@ main {
 .contact_form button:hover{
     background-color:#da7031;
 }
+
+.chart-title{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
