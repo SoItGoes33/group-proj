@@ -21,9 +21,10 @@ function formSubmit() {
                  year:               parseInt(year)
                },{
               success: function() {
-                alert("Successful.  Saved new information.");
-                window.location.hash="http://soitgoes33.github.io/group-proj/index.html#slide-3";
-                location.reload();
+                alert("Thank you! We have saved your information.");
+                //location.reload(true);
+                window.location.hash="#slide-3";
+
               },
               error: function(data,error){
                 alert("Error ");
