@@ -24,12 +24,10 @@ function formSubmit() {
                 alert("Thank you! We have saved your information.");
                 location.reload(true);
                 window.location.hash="#slide-3";
-
               },
               error: function(data,error){
                 alert("Error ");
-              }}
-    );
+              }})
 }
 var ourData = Parse.Object.extend("OurData");
 //var ourData = Parse.Object.extend("test");
@@ -74,12 +72,31 @@ function myData() {
         y: percent[j],
         tooltip: tooltip,
         size: total[j],
-        shape: 'circle',         
+        shape: 'circle',        
       });
   } 
-  
   return data;
 }
+
+/*function newPoint() {
+  var newP = Parse.Object.extend("OurData");
+  var np = new Parse.Query(newP);
+  query.descending("createdAt");
+  query.include("carId");
+  query.include("num_female_eng");
+  query.include("percent_female_eng");
+  query.include("company");
+  query.include("year");
+  query.include("num_eng");
+  query.limit(1);
+  query.find({
+      success:function(object){
+         return obj.point.color;
+      },error:function(object){
+            console.log("Error " + error);
+      },
+  });        
+}  */
 
 function createChart(){
   var chart;
