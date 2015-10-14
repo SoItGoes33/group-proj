@@ -23,6 +23,7 @@ function formSubmit() {
               success: function() {
                 alert("Successful.  Saved new information.");
                 window.location.hash="http://soitgoes33.github.io/group-proj/index.html#slide-3";
+                location.reload();
               },
               error: function(data,error){
                 alert("Error ");
