@@ -1,5 +1,4 @@
 Parse.initialize("T6qWM2dHLB1C8z8GaEo9iUzwVoI9KmDIkmZ8jz94", "P3zlR5DQkDFEK5ynygwRgrlgncRp3rKgz0eSvpuL");
-var color = [];
 function formSubmit() {
     var companyName = $("#company").val();
     var teamName = $("#team").val();
@@ -23,7 +22,6 @@ function formSubmit() {
                },{
               success: function() {
                 alert("Successful.  Saved new information.");
-                return color;
                 window.location.hash="http://soitgoes33.github.io/group-proj/index.html#slide-3";
               },
               error: function(data,error){
@@ -74,8 +72,7 @@ function myData() {
         y: percent[j],
         tooltip: tooltip,
         size: total[j],
-        shape: 'circle', 
-        color: d3.select('datash').append('circle').attr("fill", "red"),          
+        shape: 'circle',         
       });
   } 
   
