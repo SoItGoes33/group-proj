@@ -22,7 +22,7 @@ function formSubmit() {
                },{
               success: function() {
                 alert("Thank you! We have saved your information.");
-                //location.reload(true);
+                location.reload(true);
                 window.location.hash="#slide-3";
 
               },
