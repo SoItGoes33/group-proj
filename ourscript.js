@@ -22,8 +22,8 @@ function formSubmit() {
                },{
               success: function() {
                 alert("Thank you! We have saved your information.");
-                location.reload(true);
-                window.location.hash="index.html#slide-3";
+                //location.reload(true);
+                window.location.hash="#slide-3";
               },
               error: function(data,error){
                 alert("Error ");
